@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    /*analogs*/
+    --clor-bg-nav-bar : #87FAC4;
+    --clor-bag-body: #EFFEF6;
+
+    /* COLOR FONTS */
+    --color-font-dark: #17332F;
+    --color-font-shadow-dark: black;
+    --color-font-white: white;
+    --color-font--pruple: #FA8799;
+
+    --fn-p-line-height: 2rem;
+    
+    /* SIZE FONTS */
+    --fn-nav-bar-title: 2.1rem;
+    --fn-nav-bar-description: 1rem;
+    
+    --fn-section-title: 1.5rem;
+    --fn-section-paragraph: 1.3rem;
+
+    --fn-section-title-high-contrast: 3rem;
+    --fn-section-paragraph-high-contrast: 1.6rem;
+    
+    --fn-article-title: 1.3rem;
+    --fn-article-paragraph: 1.2rem;
+
+    --fn-info-title: 1.2rem;
+    --fn-info-paragraph: 1.1rem;
+
+    /*FOOTER*/
+    --clor-bg-footer : #87FAC4;
+}
+body{
+    /*default*/
+    padding: 0px;
+    margin: 0px;
+    background: var(--clor-bag-body) url(assets/images/las-hojas-de.png) no-repeat center;
+    background-attachment: fixed;
+}
+.app-root{
+    margin: 0rem;
+    padding: 0rem;
+}

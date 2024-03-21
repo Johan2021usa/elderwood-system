@@ -1,0 +1,26 @@
+<main class="main-container">
+    <section class="section-info section-info--wide-bg">
+        <h2 class="section-info__title section-info__title--high-contrast section-info__title--animation-center">¡Bienvenidos a Elderwood!</h2>
+        <p class="section-info__description section-info__description--high-contrast section-info__description--animation-bottom">
+            Con Elderwood podrá gestionar facil y efectivamente su istancia en el hotel El Maco, disfrute de la mejor experiencia turistica en el Huila
+        </p>
+    </section>
+    <section class="section-info section-info--opacity-high">
+        <h2 class="section-info__title">servicios de elderwood</h2>
+        <p class="section-info__description">
+            Elderwood les ofrece divercidad de servicios permitiendo a viajeros maximizar su relajacion y confort, a continuacion les presentamos las funciones principales de nuestro sistema
+        </p>
+    </section>
+    <section class="section-container">
+        @for (article of articles; track article.id) {
+            <article id="{{article.id}}" class="article-container" #view>
+                <h3 class="article-container__title">{{article.service}}</h3>
+                @for (description of article.descriptions; track description) {
+                    <p class="article-container__description">{{description}}</p>
+                }
+                <img class="article-container__complement" src={{article.imagePath}}>
+            </article>
+        }
+    </section>
+</main>
+

@@ -1,0 +1,58 @@
+
+// GET cliente
+GET http://localhost:9000/api/cliente HTTP/1.1
+
+
+###
+// POST CLIENTE
+POST http://localhost:9000/api/cliente HTTP/1.1
+Content-Type: application/json
+
+{
+   "cedula" : "123456",
+   "nombres" : "johan",
+   "apellidos" : "lasso",
+   "edad" : "26",
+   "ciudadResidencia" : "pasto",
+   "celular" : "333333",
+   "correo" : "johan@gmail.com"
+}
+
+// crea la clase
+###
+POST http://localhost:9000/api/hotel HTTP/1.1
+Content-Type: application/json
+
+{
+   
+   "codigo" : "HL01",
+   "nombreHotel" : "Hotel El Maco",
+   "descripcion" : "Esta ubicado en el departamento del huila",
+   "numeroContacto" : "35987456",
+   "correo" : "elmaco@gmail.com"
+   
+}
+
+//busqueda todas las clases
+###
+GET http://localhost:9000/api/habitacion HTTP/1.1
+
+
+//busqueda por id de una clase
+###
+GET http://localhost:9000/api/habitacion/655d1b3af16d0cd3a42a265f HTTP/1.1
+
+
+// atualizar documento por el id de la clase
+###
+PUT http://localhost:9000/api/habitacion/655d1b3af16d0cd3a42a265f HTTP/1.1
+Content-Type: application/json
+
+{
+   "codigo" : "H01",
+   "tipoHabitacion" : "Cabaña Domo doble",
+   "precioPorDia" : "130z.000",
+   "disponibilidad" : "Reservada, Disponible",
+   "servicioAdicionalDisponible" : "Traductor, decoracion, Paseo a caballo"
+}
+

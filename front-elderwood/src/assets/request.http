@@ -1,0 +1,19 @@
+// post admin
+POST https://65fa410d3909a9a65b1a13d4.mockapi.io/api/app/admin HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "joseph",
+    "apellido": "ruiz",
+    "edad": 25,
+    "email": "josepth@gmail.com",
+    "celular": 456789
+};
+
+###
+// get
+GET https://65fa410d3909a9a65b1a13d4.mockapi.io/api/app/admin HTTP/1.1
+
+
+
+
