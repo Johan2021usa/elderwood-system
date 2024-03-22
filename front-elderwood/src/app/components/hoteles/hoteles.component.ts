@@ -12,7 +12,7 @@ declare var M:any;
 })
 export class HotelesComponent implements OnInit{
 
-  constructor(public HotelService:HotelService){};
+  constructor(public hotelService:HotelService){};
 
   ngOnInit(): void {
     M.AutoInit();
@@ -20,10 +20,12 @@ export class HotelesComponent implements OnInit{
   };
 
   crearHotel(form?:NgForm){
-    this.HotelService.PostHotel(form?.value).subscribe(
+    console.log(form?.value)
+    this.hotelService.PostHotel(form?.value).subscribe(
       res=>{
+
         this.resetForm(form);
-        M.toast({html: "Guardado satisfactoriamente"})
+        M.toast({html: "Hotel guardado satisfactoriamente"})
       }
     );
   };
@@ -31,7 +33,6 @@ export class HotelesComponent implements OnInit{
   resetForm(form?:NgForm){
     if(form){
       form.reset();
-      this.HotelService.selectedHotel = new Hotel();  
     };
   };
 
