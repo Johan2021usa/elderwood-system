@@ -2,12 +2,12 @@
     <div class="navbar-fixed">
         <nav class="#00bcd4 cyan">
             <div class="nav-wrapper container row">
-                <a href="index.html" class="brand-logo">Elderwood</a>
+                <a routerLink="/" class="brand-logo">Elderwood</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-servicios">servicios<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-registro">registro<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a href="">informacion turistica</a></li>
+                    <li><a routerLink="/informacion-turistica">informacion turistica</a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-login">login<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             </div>
@@ -15,36 +15,37 @@
     </div>
     
     <ul id="dropdown-servicios" class="dropdown-content">
-        <li><a href="src/html/reservas.html">reservas</a></li>
-        <li><a href="src/html/ingresos.html">ingresos</a></li>
-        <li><a href="src/html/salidas.html">salidas</a></li>
-        <li><a href="src/html/pedidos.html">pedidos</a></li>
-        <li><a href="src/html/servicios-adicionales.html">servicios adicionales</a></li>
+        <li><a routerLink="/reservas" ariaCurrentWhenactive="page" >reservas</a></li>
+        <li><a routerLink="/ingresos">ingresos</a></li>
+        <li><a routerLink="/salidas">salidas</a></li>
+        <li><a routerLink="/pedidos">pedidos</a></li>
+        <li><a routerLink="/servicios-adicionales">servicios adicionales</a></li>
     </ul>
     <ul id="dropdown-registro" class="dropdown-content">
-        <li><a href="src/html/clientes.html">clientes</a></li>
+        <li><a routerLink="/clientes">clientes</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/hoteles.html">hoteles</a></li>                
+        <li><a routerLink="/hoteles">hoteles</a></li>                
     </ul>
     <ul id="dropdown-login" class="dropdown-content">
-        <li><a href="src/html/login-clientes.html">clientes</a></li>
+        <li><a routerLink="/login-clientes">clientes</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/login-admin.html">admin</a></li>                
+        <li><a routerLink="/login-admin">admin</a></li>                
     </ul>
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="src/html/reservas.html">reservas</a></li>
-        <li><a href="src/html/ingresos.html">ingresos</a></li>
-        <li><a href="src/html/salidas.html">salidas</a></li>
-        <li><a href="src/html/pedidos.html">pedidos</a></li>
-        <li><a href="src/html/servicios-adicionales.html">servicios adicionales</a></li>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/reservas">reservas</a></li>
+        <li><a routerLink="/ingresos">ingresos</a></li>
+        <li><a routerLink="/salidas">salidas</a></li>
+        <li><a routerLink="/pedidos">pedidos</a></li>
+        <li><a routerLink="/servicios-adicionales">servicios adicionales</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/hoteles.html">hoteles</a></li>
-        <li><a href="src/html/clientes.html">clientes</a></li>
+        <li><a routerLink="/hoteles">hoteles</a></li>
+        <li><a routerLink="/clientes">clientes</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/informacion-turistica.html">informacion turistica</a></li>
+        <li><a routerLink="/informacion-turistica">informacion turistica</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/login-clientes.html">clientes</a></li>
+        <li><a routerLink="/login-clientes">clientes</a></li>
         <li class="divider" tabindex="-1"></li>
-        <li><a href="src/html/login-admin.html">admin</a></li>  
+        <li><a routerLink="/login-admin">admin</a></li>  
     </ul>
 </header>

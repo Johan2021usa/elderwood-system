@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var options = {};
-    var instances = M.Sidenav.init(elems, options);
-    
+    var instances = M.Sidenav.init(elems, options);    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,3 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
     var options = {};
     var instances = M.FormSelect.init(elems, options);
   });
+

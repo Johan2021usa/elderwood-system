@@ -9,7 +9,8 @@ export class ReservaService {
 
   selectedReserva: Reserva;
   reservas: Reserva[];
-  readonly URL_API='http://localhost:9000/api/reserva'
+  readonly URL_API='http://localhost:9000/api/reserva';
+  //readonly URL_API='https://65fa410d3909a9a65b1a13d4.mockapi.io/api/app/reserva'
 
   constructor(private http: HttpClient){
     this.selectedReserva = new Reserva;
