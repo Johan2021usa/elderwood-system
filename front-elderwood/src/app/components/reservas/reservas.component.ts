@@ -1,7 +1,8 @@
-import {Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, viewChild } from '@angular/core';
 import { ReservaService } from '../../services/reserva.service';
 import { NgForm } from '@angular/forms';
 import { Reserva } from '../../models/reserva';
+import { HtmlParser } from '@angular/compiler';
 
 declare var M:any;
 @Component({
@@ -10,15 +11,41 @@ declare var M:any;
   styleUrl: './reservas.component.css',
   providers: [ReservaService]
 })
-export class ReservasComponent implements OnInit{
+export class ReservasComponent implements OnInit, AfterViewInit{
 
-  constructor(public reservaService:ReservaService){};
+  @ViewChild('reservaTable') reservaTable? : Renderer2; 
+  @ViewChild('reservaTable') table?: ElementRef; // selector table
+
+  constructor(
+    public reservaService:ReservaService
+    ){};
   
   ngOnInit(): void {
     M.AutoInit(); 
     /** This is required to recharge the materialized components every time we open one of them 
      * Ohterwise, elements like select or other that required M-init.js won't work.
     */
+  };
+
+  ngAfterViewInit(): void {
+    this.reservaTable;
+    this.table;
+  }
+  
+  // no tocar
+  reservas : any;
+  getAllReservas(){
+    if(this.table?.nativeElement.getAttribute("hidden","hidden")){
+      this.reservaService.getReservas().
+      subscribe(res=>{
+        this.table?.nativeElement.removeAttribute('hidden', "hidden");
+        // data
+        this.reservas = res;
+        //console.log(this.reservas);
+      });
+    }else{
+      this.table?.nativeElement.setAttribute('hidden', "hidden");
+    }
   };
   
   crearReserva(form?:NgForm){
@@ -29,16 +56,6 @@ export class ReservasComponent implements OnInit{
         M.toast({html: 'Reserva guardada satisfactoriamente'});
       }
     )
-  };
-
-  // no tocar
-  reservas : any;
-
-  getAllReservas(){
-    this.reservaService.getReservas().
-    subscribe(res=>{
-      this.reservas = res;
-    });
   };
   
   resetForm(form?:NgForm){

@@ -3,10 +3,38 @@
     <p>Esta ventana le permite crear reservas, gestionarlas y conocer el estado de las mismas.</p>
 </header>
 
+<div class="container">
+    <div class="card">
+        <table #reservaTable class="striped centered" hidden="hidden">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>codigo</th>
+                    <th>Fecha de inicio de reserva</th>
+                    <th>Fecha de fin de reserva</th>
+                    <th>Estado de reserva</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                @for(reserva of reservas; track reserva.id){
+                    <tr>
+                        <td>{{reserva._id}}</td>
+                        <td>{{reserva.codigo}}</td>
+                        <td>{{reserva.fechaInicioReserva}}</td>
+                        <td>{{reserva.fechaFinReserva}}</td>
+                        <td>{{reserva.estadoReserva}}</td>
+                      </tr>
+                    <tr>
+                }
+              </tbody>
+        </table>
+    </div>
+</div>
+
 <section class="container">
     <div class="row card-panel #e0f7fa cyan lighten-5">
         <form #reservaForm="ngForm" (ngSubmit)="crearReserva(reservaForm)" class="col s12">
-            
             <div class="row">
                 <div class="input-field col s6">
                     <input 
@@ -49,43 +77,13 @@
                     id="codigo_reserva" type="number" class="validate #f5f5f5 grey-text lighten-4" required>
                     <label for="codigo_reserva">codigo de reserva</label>
                 </div>
-            
-                <!--<div class="input-field col s6">
-                    <input  id="id_cliente_reserva" type="text" class="validate #f5f5f5 grey-text lighten-4">
-                    <label for="id_cliente_reserva">Numero de identificacion del cliente</label>
-                </div>-->
             </div>
-
-            <!--
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <select>
-                        <option value="disabled" disabled selected>seleccione una opcion</option>
-                        <option value="el pinto">el pinto</option>
-                        <option value="el canto">el canto</option>
-                        <option value="morenas noches">morenas noches</option>
-                    </select>
-                    <label>hotel</label>
-                </div>
-            </div>
-            
-            
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <select >
-                        <option value="disabled" disabled selected>seleccione una opcion</option>
-                        <option value="101">101</option>
-                        <option value="102">102</option>
-                        <option value="103">103</option>
-                    </select>
-                    <label>habitacion</label>
-                </div>
-            </div> -->
 
             <article class="input-field center">
                 <button type="submit" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">add</i>crear reserva</button>
             </article>   
         </form>
+
         <div class="center">
             <button type="reset" (click)="resetForm(reservaForm)" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">add</i>Limpiar</button>
             <button type="click" (click)="getAllReservas()" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">list</i>mostrar reservas</button>
