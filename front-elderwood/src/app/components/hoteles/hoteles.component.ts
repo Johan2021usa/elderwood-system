@@ -23,7 +23,7 @@ export class HotelesComponent implements OnInit{
     this.HotelService.PostHotel(form?.value).subscribe(
       res=>{
         this.resetForm(form);
-        M.toast({html: "Guardado satisfactoriamente"})
+        M.toast({html: "Guardado satisfactoriamente"});
       }
     );
   };
