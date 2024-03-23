@@ -1,1 +1,68 @@
-<p>hoteles works!</p>
+<header class="container">
+    <h3 class="header #00bcd4 cyan-text">Hoteles</h3>
+    <p>Esta ventana le permite crear reservas, gestionarlas y conocer el estado de las mismas.</p>
+</header>
+
+<section class="container">
+    <div class="row card-panel #e0f7fa cyan lighten-5">
+        <form #hotelForm="ngForm" (ngSubmit)="crearHotel(hotelForm)" class="col s12">
+ 
+            <div class="row">
+                <div class="input-field col s6">
+                    <input 
+                    name="codigo" 
+                    #codigo="ngModel" 
+                    [(ngModel)]="hotelService.selectedHotel.codigo" 
+                    id="codigo" type="text" class="validate #f5f5f5 grey-text lighten-4" required>
+                    <label for="codigo">codigo del hotel</label>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="input-field col s6">
+                    <input 
+                    name="nombreHotel" 
+                    #nombreHotel="ngModel" 
+                    [(ngModel)]="hotelService.selectedHotel.nombreHotel" 
+                    id="nombreHotel" type="text" class="validate #f5f5f5 grey-text lighten-4" required>
+                    <label for="nombreHotel">Nombre del hotel</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  
+                    name="descripcion" 
+                    #descripcion="ngModel" 
+                    [(ngModel)]="hotelService.selectedHotel.descripcion" 
+                    id="descripcion" type="text" class="validate #f5f5f5 grey-text lighten-4" required>
+                    <label for="descripcion">Descripcion del hotel</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  
+                    name="numeroContacto" 
+                    #numeroContacto="ngModel" 
+                    [(ngModel)]="hotelService.selectedHotel.numeroContacto" 
+                    id="numeroContacto" type="text" class="validate #f5f5f5 grey-text lighten-4" required>
+                    <label for="numeroContacto">Numero de contacto del hotel</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  
+                    name="correo" 
+                    #correo="ngModel" 
+                    [(ngModel)]="hotelService.selectedHotel.correo" 
+                    id="correo" type="text" class="validate #f5f5f5 grey-text lighten-4" required>
+                    <label for="correo">Correo de contacto del hotel</label>
+                </div>  
+            </div>
+
+            <article class="input-field center">
+                <button type="submit" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">add</i>crear hotel</button>
+            </article>   
+        </form>
+        <div class="center">
+            <button type="reset" (click)="resetForm(hotelForm)" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">add</i>Limpiar</button>
+            <button type="click" class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">list</i>mostrar hoteles</button>
+            <button class="btn waves-effect #00bcd4 cyan "><i class="material-icons right">search</i>buscar</button>
+        </div>
+    </div>
+</section>

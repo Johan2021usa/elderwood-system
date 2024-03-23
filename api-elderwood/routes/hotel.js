@@ -1,7 +1,14 @@
 const express = require("express"); 
 const hotelSchema = require("../models/hotel");
+const cors = require('cors'); // import cors library
 
 const router = express.Router();
+
+router.use(
+    cors(
+        {origin: "http://localhost:4200"}
+    )
+);
 
 //crear hotel
 router.post("/hotel", (req, res) => {
